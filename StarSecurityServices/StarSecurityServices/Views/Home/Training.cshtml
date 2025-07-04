@@ -1,0 +1,59 @@
+﻿<style>
+    /* -------- Hero banner with background image -------- */
+    .rt-hero {
+        background: url("https://images.unsplash.com/photo-1737735510156-b9b38443039c?q=80&w=1127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
+        background-size: cover;
+        height: 90vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+
+        .rt-hero::before { /* dark overlay for readability */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.50);
+        }
+
+        .rt-hero .content {
+            position: relative; /* sits above overlay */
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+    /* -------- Section below hero -------- */
+    .rt-body {
+        padding: 4rem 0;
+    }
+</style>
+
+<section class="rt-hero">
+    <div class="content">
+        <h1 class="display-5 fw-bold">
+            Please explore our recruitment &amp; training services
+        </h1>
+        <p class="lead mt-3">
+            Building a highly skilled, disciplined security workforce through rigorous screening and certified training programs.
+        </p>
+    </div>
+</section>
+
+<!-- Body / Service description -->
+<section class="rt-body bg-white text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Our Recruitment &amp; Training Programs</h2>
+        <p>
+            Star&nbsp;Securities follows a strict multi‑stage recruitment process—background checks,
+            psychometric testing, and physical fitness assessments—to ensure we onboard only the most capable
+            candidates. New recruits then enter our accredited training academy, covering conflict management,
+            first aid, fire safety, customer service and advanced surveillance techniques. Continuous refresher
+            courses and on‑site coaching guarantee that our personnel perform to the highest standards, keeping
+            your people, property and brand reputation safe.
+        </p>
+    </div>
+</section>

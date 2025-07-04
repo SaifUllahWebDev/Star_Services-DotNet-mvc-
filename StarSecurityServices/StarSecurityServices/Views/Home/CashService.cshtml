@@ -1,0 +1,106 @@
+﻿<section id="cash-services" class="py-5">
+
+    <!-- Hero / Heading -->
+    <div class="container text-center mb-5">
+        <h1 class="fw-bold">Choose a Cash Logistics Service</h1>
+        <p class="text-muted">Secure and professional cash handling for businesses and institutions.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <!-- Card 1 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="job-card h-100">
+                    <div class="job-icon"><i class="bi bi-truck"></i></div>
+                    <h3 class="job-title">Cash Pickup Service</h3>
+                    <img src="https://images.unsplash.com/photo-1581092160614-e5f4a6b33c9e?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-3" alt="Cash Pickup">
+                    <p>We pick up daily cash deposits directly from your business and deliver them safely to your bank.</p>
+                    <a href="/CashService/Create?type=pickup" class="btn job-btn w-100">Request Pickup</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="job-card h-100">
+                    <div class="job-icon"><i class="bi bi-bank"></i></div>
+                    <h3 class="job-title">ATM Replenishment</h3>
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-3" alt="ATM Service">
+                    <p>Our armored teams refill ATMs on schedule, ensuring availability and reducing downtime risk.</p>
+                    <a href="/CashService/Create?type=atm" class="btn job-btn w-100">Schedule Refill</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="job-card h-100">
+                    <div class="job-icon"><i class="bi bi-shield-lock"></i></div>
+                    <h3 class="job-title">Armored Transport</h3>
+                    <img src="https://images.unsplash.com/photo-1621981736824-1a1ec3bc878e?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-3" alt="Armored Transport">
+                    <p>Secure transfer of high-value assets or funds with real-time tracking and certified security personnel.</p>
+                    <a href="/CashService/Create?type=armored" class="btn job-btn w-100">Book Transport</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="job-card h-100">
+                    <div class="job-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <h3 class="job-title">Cash Drop-Off</h3>
+                    <img src="https://images.unsplash.com/photo-1593672426383-4a4efcdcbf6c?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded mb-3" alt="Cash Dropoff">
+                    <p>Need change delivered or float dropped off? Schedule reliable deliveries right to your branch.</p>
+                    <a href="/CashService/Create?type=dropoff" class="btn job-btn w-100">Schedule Drop-Off</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- ===== Inline Styling for Consistency ===== -->
+<style>
+    .job-card {
+        background-color: #2b2359;
+        color: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform .3s;
+    }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+        }
+
+    .job-icon {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        color: #007bff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .job-title {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .job-btn {
+        background: #007bff;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+        .job-btn:hover {
+            background: #0056b3;
+        }
+</style>

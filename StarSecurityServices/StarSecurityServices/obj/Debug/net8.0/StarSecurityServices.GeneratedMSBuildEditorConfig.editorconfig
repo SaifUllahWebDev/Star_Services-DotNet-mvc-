@@ -112,12 +112,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdmFpbGFibGVWYWNhbmNpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/CashService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXNoU2VydmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/EastRegion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFYXN0UmVnaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/ElectronicSystem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbGVjdHJvbmljU3lzdGVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/MannedGuard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYW5uZWRHdWFyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/NorthRegion.cshtml]
@@ -130,6 +142,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/SouthRegion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTb3V0aFJlZ2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/Training.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmFpbmluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/E-Project/StarSecurityServices/StarSecurityServices/Views/Home/WestRegion.cshtml]

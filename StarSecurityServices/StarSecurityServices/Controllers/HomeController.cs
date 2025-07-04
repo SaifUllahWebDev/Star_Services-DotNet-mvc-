@@ -21,6 +21,22 @@ namespace StarSecurityServices.Controllers
         {
             return View();
         }
+        public IActionResult CashService()
+        {
+            return View();
+        }
+        public IActionResult ElectronicSystem()
+        {
+            return View();
+        }
+        public IActionResult MannedGuard()
+        {
+            return View();
+        }
+        public IActionResult Training()
+        {
+            return View();
+        }
         public IActionResult Career()
         {
             return View();

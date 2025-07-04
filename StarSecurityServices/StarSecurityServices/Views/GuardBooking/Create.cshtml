@@ -1,0 +1,228 @@
+﻿@model StarSecurityServices.Models.GuardBookings
+
+@{
+    ViewBag.Title = "Book a Guard";
+    Layout = null;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        font-size: 0.92rem;
+    }
+
+    label {
+        font-weight: 500;
+        margin-bottom: 2px;
+    }
+
+    .form-control, select {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .card-header {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+</style>
+
+<div class="d-flex min-vh-100">
+    @await Html.PartialAsync("_EmployeeLayout")
+
+    <div class="flex-grow-1 p-3">
+        <h2 class="mb-3">🛡️ Book a Guard</h2>
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Success"]
+            </div>
+        }
+
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+            <!-- Personal Details -->
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">Personal Details</div>
+                <div class="card-body row g-2">
+                    <div class="col-md-6">
+                        <label asp-for="FullName"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="AlternatePhone"></label>
+                        <input asp-for="AlternatePhone" class="form-control" />
+                        <span asp-validation-for="AlternatePhone" class="text-danger small"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Details -->
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">Booking Details</div>
+                <div class="card-body row g-2">
+                    <div class="col-md-6">
+                        <label asp-for="GuardType"></label>
+                        <select asp-for="GuardType" class="form-control">
+                            <option value="">Select</option>
+                            <option>Security Guard</option>
+                            <option>Bodyguard</option>
+                            <option>Dog Squad</option>
+                            <option>Fire Squad</option>
+                        </select>
+                        <span asp-validation-for="GuardType" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="NumberOfGuards"></label>
+                        <input asp-for="NumberOfGuards" class="form-control" />
+                        <span asp-validation-for="NumberOfGuards" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="StartDate"></label>
+                        <input asp-for="StartDate" type="date" class="form-control" />
+                        <span asp-validation-for="StartDate" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="EndDate"></label>
+                        <input asp-for="EndDate" type="date" class="form-control" />
+                        <span asp-validation-for="EndDate" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="ShiftTiming"></label>
+                        <input asp-for="ShiftTiming" class="form-control" placeholder="e.g. 08:00 AM - 08:00 PM" />
+                        <span asp-validation-for="ShiftTiming" class="text-danger small"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Info -->
+            <div class="card mb-3">
+                <div class="card-header bg-info text-white">Location Info</div>
+                <div class="card-body row g-2">
+                    <div class="col-md-6">
+                        <label asp-for="Region"></label>
+                        <select asp-for="Region" class="form-control">
+                            <option value="">Select</option>
+                            <option>North</option>
+                            <option>South</option>
+                            <option>East</option>
+                            <option>West</option>
+                        </select>
+                        <span asp-validation-for="Region" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="City"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Landmark"></label>
+                        <input asp-for="Landmark" class="form-control" />
+                        <span asp-validation-for="Landmark" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Address"></label>
+                        <textarea asp-for="Address" class="form-control" rows="2"></textarea>
+                        <span asp-validation-for="Address" class="text-danger small"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company & Skills -->
+            <div class="card mb-3">
+                <div class="card-header bg-dark text-white">Company & Experience</div>
+                <div class="card-body row g-2">
+                    <div class="col-md-6">
+                        <label asp-for="CompanyName"></label>
+                        <input asp-for="CompanyName" class="form-control" />
+                        <span asp-validation-for="CompanyName" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="ServiceType"></label>
+                        <select asp-for="ServiceType" class="form-control">
+                            <option value="">Select</option>
+                            <option>Corporate</option>
+                            <option>Event Security</option>
+                            <option>VIP Protection</option>
+                            <option>Residential</option>
+                        </select>
+                        <span asp-validation-for="ServiceType" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="PreferredSkills"></label>
+                        <input asp-for="PreferredSkills" class="form-control" />
+                        <span asp-validation-for="PreferredSkills" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="SupportingDocumentPath">Supporting Document</label>
+                        <input type="file" name="SupportingDocument" class="form-control" />
+                        <span asp-validation-for="SupportingDocumentPath" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="PreviousSecurityExperience"></label>
+                        <textarea asp-for="PreviousSecurityExperience" class="form-control" rows="2"></textarea>
+                        <span asp-validation-for="PreviousSecurityExperience" class="text-danger small"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="SecurityDescription"></label>
+                        <textarea asp-for="SecurityDescription" class="form-control" rows="2"></textarea>
+                        <span asp-validation-for="SecurityDescription" class="text-danger small"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="text-end">
+                <input type="submit" value="Submit Booking" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}

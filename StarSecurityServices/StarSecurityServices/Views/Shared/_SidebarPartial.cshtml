@@ -1,0 +1,66 @@
+﻿@* Views/Shared/_SidebarPartial.cshtml *@
+
+
+<!-- Sidebar -->
+<div class="bg-white shadow-sm border-end" style="min-width: 250px;">
+    <div class="sidebar-heading text-center py-4 fs-4 fw-bold border-bottom bg-primary text-white">
+        Admin Panel
+    </div>
+    <div class="list-group list-group-flush p-2">
+
+        <a asp-controller="Admin" asp-action="Dashboard" class="list-group-item list-group-item-action mb-1 rounded">
+            🏠 Dashboard
+        </a>
+
+        <a asp-controller="Admin" asp-action="GuardBookings" class="list-group-item list-group-item-action mb-1 rounded">
+            🛡️ Guard Bookings
+        </a>
+
+        <a asp-controller="Admin" asp-action="CashServices" class="list-group-item list-group-item-action mb-1 rounded">
+            💰 Cash Services
+        </a>
+
+        <!-- Recruitment Dropdown -->
+        <div class="dropdown mb-1">
+            <button class="btn btn-light w-100 text-start dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                📋 Recruitment
+            </button>
+            <ul class="dropdown-menu w-100">
+                <li><a class="dropdown-item" asp-controller="Admin" asp-action="Recruitments">📢 Announcements</a></li>
+                <li><a class="dropdown-item" asp-controller="Admin" asp-action="ViewApplications">📝 Applications</a></li>
+            </ul>
+        </div>
+
+        <!-- Electronic Requests Dropdown -->
+        <div class="dropdown mb-1">
+            <button class="btn btn-light w-100 text-start dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                🖥️ Electronic Requests
+            </button>
+            <ul class="dropdown-menu w-100">
+                <li><a class="dropdown-item" asp-controller="ElectronicServiceRequest" asp-action="ViewRequests">📨 View Requests</a></li>
+            </ul>
+        </div>
+
+        <!-- Vacancies Dropdown -->
+        <div class="dropdown mb-1">
+            <button class="btn btn-light w-100 text-start dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                📄 Vacancies
+            </button>
+            <ul class="dropdown-menu w-100">
+                <li><a class="dropdown-item" asp-controller="Vacancy" asp-action="Index">📋 View Vacancies</a></li>
+                <li><a class="dropdown-item" asp-controller="Vacancy" asp-action="Create">➕ Add New Vacancy</a></li>
+            </ul>
+        </div>
+
+        <!-- Employee Management -->
+        <a asp-controller="Admin" asp-action="Employees" class="list-group-item list-group-item-action mb-1 rounded">
+            👨‍💼 Employees
+        </a>
+
+        <!-- Logout Button -->
+        <form asp-controller="Auth" asp-action="Logout" method="post" class="mt-4 px-2">
+            <button type="submit" class="btn btn-danger w-100">🚪 Logout</button>
+        </form>
+
+    </div>
+</div>

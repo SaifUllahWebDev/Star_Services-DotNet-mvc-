@@ -1,0 +1,100 @@
+﻿@model IEnumerable<StarSecurityServices.Models.RecruitmentAnnouncement>
+
+@{
+    ViewBag.Title = "Training Announcements";
+    Layout = null;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    .card-header h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .table thead th {
+        background-color: #0d6efd;
+        color: white;
+        vertical-align: middle;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    .btn-apply {
+        background-color: #198754;
+        color: white;
+        font-size: 0.875rem;
+        padding: 4px 12px;
+        border-radius: 20px;
+        transition: 0.2s;
+    }
+
+        .btn-apply:hover {
+            background-color: #157347;
+            color: white;
+            text-decoration: none;
+        }
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+</style>
+
+<div class="d-flex min-vh-100 bg-light">
+    @await Html.PartialAsync("_EmployeeLayout")
+
+    <div class="flex-grow-1 p-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white d-flex align-items-center">
+                <h2 class="mb-0">📋 Training Announcements</h2>
+            </div>
+
+            <div class="card-body p-4">
+                @if (!Model.Any())
+                {
+                    <div class="alert alert-info text-center">
+                        No training announcements available at the moment.
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped align-middle text-center">
+                            <thead>
+                                <tr>
+                                    <th>📌 Title</th>
+                                    <th>📝 Description</th>
+                                    <th>📅 Training Date</th>
+                                    <th>📍 Location</th>
+                                    <th>✅ Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Title</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.TrainingDate.ToShortDateString()</td>
+                                        <td>@item.Location</td>
+                                        <td>
+                                            <a class="btn btn-apply" asp-controller="RecruitmentApplication" asp-action="Apply" asp-route-announcementId="@item.Id">
+                                                Apply
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

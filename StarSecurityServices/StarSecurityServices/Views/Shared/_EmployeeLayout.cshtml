@@ -1,0 +1,49 @@
+﻿<div class="bg-white shadow-sm border-end" style="min-width: 250px;">
+    <div class="sidebar-heading text-center py-4 fs-4 fw-bold border-bottom bg-primary text-white">
+        Employee Panel
+    </div>
+    <div class="list-group list-group-flush p-2">
+
+        <a asp-controller="Employee" asp-action="Dashboard" class="list-group-item list-group-item-action mb-1 rounded">
+            🏠 Dashboard
+        </a>
+
+        <a asp-controller="GuardBooking" asp-action="Create" class="list-group-item list-group-item-action mb-1 rounded">
+            🛡️ Guard Bookings
+        </a>
+
+        <a asp-controller="CashService" asp-action="Create" class="list-group-item list-group-item-action mb-1 rounded">
+            💰 Cash Services
+        </a>
+
+        <a asp-controller="Employee" asp-action="ViewBookings" class="list-group-item list-group-item-action mb-1 rounded">
+            📋 View Bookings
+        </a>
+
+        <!-- Recruitment Dropdown -->
+        <div class="mb-1">
+            <button class="btn btn-light w-100 text-start dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                📋 Recruitment
+            </button>
+            <ul class="dropdown-menu w-100">
+                <li><a class="dropdown-item" asp-controller="RecruitmentAnnouncement" asp-action="List">📢 Announcements</a></li>
+            </ul>
+        </div>
+
+        <!-- Electronic Requests Dropdown -->
+        <div class="mb-1">
+            <button class="btn btn-light w-100 text-start dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                🖥️ Electronic Requests
+            </button>
+            <ul class="dropdown-menu w-100">
+                <li><a class="dropdown-item" asp-controller="ElectronicServiceRequest" asp-action="Create">➕ Add Request</a></li>
+            </ul>
+        </div>
+
+        <!-- Logout Button -->
+        <form asp-controller="Auth" asp-action="Logout" method="post" class="mt-4 px-2">
+            <button type="submit" class="btn btn-danger w-100">🚪 Logout</button>
+        </form>
+
+    </div>
+</div>

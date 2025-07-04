@@ -1,0 +1,95 @@
+﻿@model IEnumerable<StarSecurityServices.Models.Vacancy>
+@{
+    ViewData["Title"] = "All Vacancies";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="d-flex min-vh-100">
+    @await Html.PartialAsync("_SidebarPartial")
+
+    <div class="flex-grow-1 p-4">
+        @* Main content goes here *@
+
+        <div class="container mt-5">
+            <h2 class="mb-4">All Job Vacancies</h2>
+
+            <a asp-action="Create" class="btn btn-success mb-3">+ Add New Vacancy</a>
+
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info">No vacancies found.</div>
+            }
+            else
+            {
+                <table class="table table-bordered table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Region</th>
+                            <th>Salary</th>
+                            <th>Timing</th>
+                            <th>Status</th>
+                            <th style="width: 180px;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var vacancy in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(vacancy.ImagePath))
+                                    {
+                                        <img src="~/uploads/vacancies/@vacancy.ImagePath" alt="Job Image" width="100" class="img-thumbnail" />
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">No image</span>
+                                    }
+                                </td>
+                                <td>@vacancy.JobTitle</td>
+                                <td>@vacancy.Region</td>
+                                <td>@vacancy.Salary.ToString("N0") PKR</td>
+                                <td>@vacancy.Timing</td>
+                                <td>
+                                    @if (vacancy.IsFilled)
+                                    {
+                                        <span class="badge bg-danger">Filled</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">Open</span>
+                                    }
+                                </td>
+
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@vacancy.Id" class="btn btn-sm btn-warning me-1">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@vacancy.Id" class="btn btn-sm btn-danger me-1">Delete</a>
+
+                                    @if (!vacancy.IsFilled)
+                                    {
+                                        <form asp-action="MarkFilled" asp-route-id="@vacancy.Id" method="post" style="display:inline">
+                                            <button type="submit" class="btn btn-sm btn-success">Mark as Filled</button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">Filled</span>
+                                    }
+                                </td>
+
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+
+    </div>
+</div>
+
+
